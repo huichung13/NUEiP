@@ -13,9 +13,39 @@
     
     $arrA = array(77, 5, 5, 22, 13, 55, 97, 4, 796, 1, 0, 9);
     $arrB = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-    echo "c交集 intersection";
-    echo "d差集 diff";
-    echo "e聯集 union of";
+    $arrC = [];
+    $arrD = [];
+    $arrE = [];
+    $lenA = count($arrA);
+    $lenB = count($arrB);
+
+    for ($i=0; $i < $lenA; $i++) { 
+        for ($j=0; $j < $lenB; $j++) { 
+            if ($arrA[$i] == $arrB[$j]) {
+                array_push($arrC, $arrA[$i]);
+            }
+        }
+    }
+
+
+    for ($i=0; $i < $lenA; $i++) { 
+        
+            if (!in_array($arrA[$i], $arrB)) {
+                array_push($arrD, $arrA[$i]);
+            }
+        
+    }
+    
+
+
+    echo "c交集 intersection：";
+    print_r($arrC); 
+    echo "<br>";
+    echo "d差集 diff：";
+    print_r($arrD); 
+    echo "<br>";
+    echo "e聯集 union of：";
+    print_r($arrE); 
     ?>
     
 </body>
